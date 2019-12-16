@@ -7,14 +7,14 @@ exports[`Let it display 1`] = `
       class="display panel"
     >
       <div
-        class="led red-led"
+        class="led green-led"
       >
-        Locked
+        Unlocked
       </div>
       <div
-        class="led red-led"
+        class="led green-led"
       >
-        Closed
+        Open
       </div>
     </div>
   </div>

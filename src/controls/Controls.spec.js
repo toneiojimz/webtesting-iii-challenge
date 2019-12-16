@@ -1,16 +1,15 @@
 // Test away!
 import React from 'react';
-import {render} from '@testing-library/react';
+import {render, fireEvent, getByTestId} from '@testing-library/react';
 
-import Display from './Controls';
-import { testNameToKey } from 'jest-snapshot/build/utils';
-import expectExport from 'expect';
+import Controls from './Controls';
+
 
 test("Control the control", () => {
 
-    const closed = false;
-    const locked = false;
-
-    const {baseElement, rerender}= render(<Display closed={closed} locked={locked}/>)
-    expect(baseElement).toMatchSnapshot();
+ const{getByText} =render(<Controls/>)
+ const button =getByText(/Close Gate/i)
+ fireEvent.click(button);
+ getByText(/Lock Gate/i);
 })
+
